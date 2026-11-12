@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Header & Search -->
+      <header class="dashboard-header">
+        <div class="header-titles">
+          <h1>Weather Dashboard</h1>
+          <p class="subtitle">Sample data for design preview</p>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search a city..." />
+          <button>Search</button>
+        </div>
+      </header>
+
+      <!-- Right Now Banner -->
+      <section class="current-weather-banner">
+        <div class="weather-info">
+          <span class="tag">RIGHT NOW</span>
+          <h2 class="temp">24°</h2>
+          <p class="condition">Partly cloudy</p>
+          <p class="high-low">H: 28° &nbsp;&nbsp; L: 19°</p>
+        </div>
+        <div class="weather-graphic">⛅</div>
+      </section>
+
+      <!-- Main Bottom Grid (Today's Details & This Week) -->
+      <div class="dashboard-grid">
+        <!-- Today's Details -->
+        <section class="card details-card">
+          <h2>TODAY'S DETAILS</h2>
+          <div class="details-grid">
+            <div class="sub-card">
+              <span class="label">Feels like</span>
+              <span class="value">26°</span>
+            </div>
+            <div class="sub-card">
+              <span class="label">Humidity</span>
+              <span class="value">62%</span>
+            </div>
+            <div class="sub-card">
+              <span class="label">Wind</span>
+              <span class="value">14 km/h</span>
+            </div>
+            <div class="sub-card">
+              <span class="label">UV index</span>
+              <span class="value">6 High</span>
+            </div>
+            <div class="sub-card">
+              <span class="label">Visibility</span>
+              <span class="value">10 km</span>
+            </div>
+            <div class="sub-card">
+              <span class="label">Pressure</span>
+              <span class="value">1012 hPa</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- This Week -->
+        <section class="card weekly-card">
+          <h2>THIS WEEK</h2>
+          <div class="weekly-list">
+            <div class="day-row">
+              <span class="day-name">Mon</span>
+              <span class="day-info">☀️ Sunny</span>
+              <span class="day-temps"
+                ><strong>28°</strong> <span class="low">19°</span></span
+              >
+            </div>
+            <div class="day-row">
+              <span class="day-name">Tue</span>
+              <span class="day-info">⛅ Partly cloudy</span>
+              <span class="day-temps"
+                ><strong>27°</strong> <span class="low">18°</span></span
+              >
+            </div>
+            <div class="day-row">
+              <span class="day-name">Wed</span>
+              <span class="day-info">🌧️ Showers</span>
+              <span class="day-temps"
+                ><strong>23°</strong> <span class="low">17°</span></span
+              >
+            </div>
+            <div class="day-row">
+              <span class="day-name">Thu</span>
+              <span class="day-info">⛈️ Thunderstorms</span>
+              <span class="day-temps"
+                ><strong>22°</strong> <span class="low">16°</span></span
+              >
+            </div>
+            <div class="day-row">
+              <span class="day-name">Fri</span>
+              <span class="day-info">🌤️ Mostly sunny</span>
+              <span class="day-temps"
+                ><strong>26°</strong> <span class="low">18°</span></span
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather 🌤️</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="sidebar"></nav>
+    <div class="dashboard">
+      <header>
+        <div>
+          <h1>Weather Dashboard🌤️</h1>
+          <p>Climate data for your location</p>
+        </div>
+        <form class="search" onsubmit="return false;">
+          <input
+            type="text"
+            placeholder="Search a city"
+            aria-label="Search a city"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </header>
+
+      <section class="card current">
+        <div>
+          <h2>Right now</h2>
+          <div class="temp">24°</div>
+          <div class="condition">Partly cloudy</div>
+          <div class="range">H: 28° &nbsp; L: 19°</div>
+        </div>
+        <div class="icon" aria-hidden="true">⛅</div>
+      </section>
+
+      <section class="card">
+        <h2>Today's details</h2>
+        <div class="metrics">
+          <div class="metric">
+            <div class="label">Feels like</div>
+            <div class="value">26°</div>
+          </div>
+          <div class="metric">
+            <div class="label">Humidity</div>
+            <div class="value">62%</div>
+          </div>
+          <div class="metric">
+            <div class="label">Wind</div>
+            <div class="value">14 km/h</div>
+          </div>
+          <div class="metric">
+            <div class="label">UV index</div>
+            <div class="value">6 High</div>
+          </div>
+          <div class="metric">
+            <div class="label">Visibility</div>
+            <div class="value">10 km</div>
+          </div>
+          <div class="metric">
+            <div class="label">Pressure</div>
+            <div class="value">1012 hPa</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>This week</h2>
+        <div class="daily-row">
+          <div class="day">Mon</div>
+          <div class="emoji" aria-hidden="true">☀️</div>
+          <div class="desc">Sunny</div>
+          <div class="hilo">28° <span>19°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Tue</div>
+          <div class="emoji" aria-hidden="true">⛅</div>
+          <div class="desc">Partly cloudy</div>
+          <div class="hilo">27° <span>18°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Wed</div>
+          <div class="emoji" aria-hidden="true">🌧️</div>
+          <div class="desc">Showers</div>
+          <div class="hilo">23° <span>17°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Thu</div>
+          <div class="emoji" aria-hidden="true">⛈️</div>
+          <div class="desc">Thunderstorms</div>
+          <div class="hilo">22° <span>16°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Fri</div>
+          <div class="emoji" aria-hidden="true">🌤️</div>
+          <div class="desc">Mostly sunny</div>
+          <div class="hilo">26° <span>18°</span></div>
+        </div>
+      </section>
+
+      <section class="card hourly">
+        <h2>Next 8 hours</h2>
+        <div class="hour-row">
+          <div class="hour now">
+            <div class="time">Now</div>
+            <div class="emoji" aria-hidden="true">⛅</div>
+            <div class="temp-small">24°</div>
+          </div>
+          <div class="hour">
+            <div class="time">2 PM</div>
+            <div class="emoji" aria-hidden="true">☀️</div>
+            <div class="temp-small">26°</div>
+          </div>
+          <div class="hour">
+            <div class="time">3 PM</div>
+            <div class="emoji" aria-hidden="true">☀️</div>
+            <div class="temp-small">27°</div>
+          </div>
+          <div class="hour">
+            <div class="time">4 PM</div>
+            <div class="emoji" aria-hidden="true">🌤️</div>
+            <div class="temp-small">27°</div>
+          </div>
+          <div class="hour">
+            <div class="time">5 PM</div>
+            <div class="emoji" aria-hidden="true">⛅</div>
+            <div class="temp-small">26°</div>
+          </div>
+          <div class="hour">
+            <div class="time">6 PM</div>
+            <div class="emoji" aria-hidden="true">🌧️</div>
+            <div class="temp-small">24°</div>
+          </div>
+          <div class="hour">
+            <div class="time">7 PM</div>
+            <div class="emoji" aria-hidden="true">🌧️</div>
+            <div class="temp-small">23°</div>
+          </div>
+          <div class="hour">
+            <div class="time">8 PM</div>
+            <div class="emoji" aria-hidden="true">☁️</div>
+            <div class="temp-small">21°</div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="dashboard-footer">
+      <p>Updated just now</p>
+      <p>Updated your location</p>
+      <p>
+        Made with by
+        <a href="https://github.com/AbhinavAnand03">Abhinav Anand</a>
+      </p>
+      <p>© Since 2026</p>
+    </div>
+  </body>
+</html>

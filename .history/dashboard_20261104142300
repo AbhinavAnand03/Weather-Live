@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .dashboard {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      }
+
+      .card h2 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #64748b;
+        margin-bottom: 16px;
+      }
+
+      /* Header */
+      header {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      .search {
+        display: flex;
+        gap: 8px;
+      }
+
+      .search input {
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        width: 220px;
+      }
+
+      .search button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        background: #1e293b;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+
+      .search button:hover {
+        background: #334155;
+      }
+
+      /* Current conditions */
+      .current {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        background: linear-gradient(135deg, #38bdf8, #2563eb);
+        color: #fff;
+      }
+
+      .current h2 {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .temp {
+        font-size: 4.5rem;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .condition {
+        font-size: 1.2rem;
+        margin-top: 8px;
+      }
+
+      .range {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        margin-top: 4px;
+      }
+
+      .icon {
+        font-size: 6rem;
+        line-height: 1;
+      }
+
+      /* Metric grid */
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .metric {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .metric .label {
+        font-size: 0.8rem;
+        color: #64748b;
+      }
+
+      .metric .value {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 4px;
+      }
+
+      /* Hourly forecast */
+      .hourly {
+        grid-column: 1 / -1;
+      }
+
+      .hour-row {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+
+      .hour {
+        min-width: 80px;
+        text-align: center;
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 14px 8px;
+      }
+
+      .hour.now {
+        background: #1e293b;
+        color: #fff;
+      }
+
+      .hour .time {
+        font-size: 0.8rem;
+        color: #64748b;
+      }
+
+      .hour.now .time {
+        color: #cbd5e1;
+      }
+
+      .hour .emoji {
+        font-size: 1.6rem;
+        margin: 8px 0;
+      }
+
+      .hour .temp-small {
+        font-weight: bold;
+      }
+
+      /* Daily forecast */
+      .daily-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .daily-row:last-child {
+        border-bottom: none;
+      }
+
+      .daily-row .day {
+        width: 60px;
+        font-weight: bold;
+      }
+
+      .daily-row .emoji {
+        font-size: 1.4rem;
+      }
+
+      .daily-row .desc {
+        flex: 1;
+        padding-left: 12px;
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      .daily-row .hilo {
+        font-weight: bold;
+      }
+
+      .daily-row .hilo span {
+        color: #94a3b8;
+        font-weight: normal;
+      }
+
+      /* Responsive */
+      @media (max-width: 760px) {
+        .dashboard {
+          grid-template-columns: 1fr;
+        }
+        .temp {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <header>
+        <div>
+          <h1>Weather Dashboard</h1>
+          <p>Sample data for design preview</p>
+        </div>
+        <form class="search" onsubmit="return false;">
+          <input
+            type="text"
+            placeholder="Search a city"
+            aria-label="Search a city"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </header>
+
+      <section class="card current">
+        <div>
+          <h2>Right now</h2>
+          <div class="temp">24°</div>
+          <div class="condition">Partly cloudy</div>
+          <div class="range">H: 28° &nbsp; L: 19°</div>
+        </div>
+        <div class="icon" aria-hidden="true">⛅</div>
+      </section>
+
+      <section class="card">
+        <h2>Today's details</h2>
+        <div class="metrics">
+          <div class="metric">
+            <div class="label">Feels like</div>
+            <div class="value">26°</div>
+          </div>
+          <div class="metric">
+            <div class="label">Humidity</div>
+            <div class="value">62%</div>
+          </div>
+          <div class="metric">
+            <div class="label">Wind</div>
+            <div class="value">14 km/h</div>
+          </div>
+          <div class="metric">
+            <div class="label">UV index</div>
+            <div class="value">6 High</div>
+          </div>
+          <div class="metric">
+            <div class="label">Visibility</div>
+            <div class="value">10 km</div>
+          </div>
+          <div class="metric">
+            <div class="label">Pressure</div>
+            <div class="value">1012 hPa</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>This week</h2>
+        <div class="daily-row">
+          <div class="day">Mon</div>
+          <div class="emoji" aria-hidden="true">☀️</div>
+          <div class="desc">Sunny</div>
+          <div class="hilo">28° <span>19°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Tue</div>
+          <div class="emoji" aria-hidden="true">⛅</div>
+          <div class="desc">Partly cloudy</div>
+          <div class="hilo">27° <span>18°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Wed</div>
+          <div class="emoji" aria-hidden="true">🌧️</div>
+          <div class="desc">Showers</div>
+          <div class="hilo">23° <span>17°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Thu</div>
+          <div class="emoji" aria-hidden="true">⛈️</div>
+          <div class="desc">Thunderstorms</div>
+          <div class="hilo">22° <span>16°</span></div>
+        </div>
+        <div class="daily-row">
+          <div class="day">Fri</div>
+          <div class="emoji" aria-hidden="true">🌤️</div>
+          <div class="desc">Mostly sunny</div>
+          <div class="hilo">26° <span>18°</span></div>
+        </div>
+      </section>
+
+      <section class="card hourly">
+        <h2>Next 8 hours</h2>
+        <div class="hour-row">
+          <div class="hour now">
+            <div class="time">Now</div>
+            <div class="emoji" aria-hidden="true">⛅</div>
+            <div class="temp-small">24°</div>
+          </div>
+          <div class="hour">
+            <div class="time">2 PM</div>
+            <div class="emoji" aria-hidden="true">☀️</div>
+            <div class="temp-small">26°</div>
+          </div>
+          <div class="hour">
+            <div class="time">3 PM</div>
+            <div class="emoji" aria-hidden="true">☀️</div>
+            <div class="temp-small">27°</div>
+          </div>
+          <div class="hour">
+            <div class="time">4 PM</div>
+            <div class="emoji" aria-hidden="true">🌤️</div>
+            <div class="temp-small">27°</div>
+          </div>
+          <div class="hour">
+            <div class="time">5 PM</div>
+            <div class="emoji" aria-hidden="true">⛅</div>
+            <div class="temp-small">26°</div>
+          </div>
+          <div class="hour">
+            <div class="time">6 PM</div>
+            <div class="emoji" aria-hidden="true">🌧️</div>
+            <div class="temp-small">24°</div>
+          </div>
+          <div class="hour">
+            <div class="time">7 PM</div>
+            <div class="emoji" aria-hidden="true">🌧️</div>
+            <div class="temp-small">23°</div>
+          </div>
+          <div class="hour">
+            <div class="time">8 PM</div>
+            <div class="emoji" aria-hidden="true">☁️</div>
+            <div class="temp-small">21°</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header>
+        <h1>Weather Dashboard</h1>
+        <p class="preview-label">Sample data for design preview</p>
+        <div class="search-bar">
+          <input type="text" placeholder="Search a city..." />
+          <button>Search</button>
+        </div>
+      </header>
+
+      <!-- Right Now Section -->
+      <section>
+        <h2>Right now</h2>
+        <div class="current-weather">
+          <div>
+            <div class="temp-large">24°</div>
+            <div class="condition">Partly cloudy</div>
+            <div class="high-low">H: 28° &nbsp; L: 19°</div>
+          </div>
+          <div class="weather-icon">⛅</div>
+        </div>
+      </section>
+
+      <!-- Today's Details Section -->
+      <section>
+        <h2>Today's details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-title">Feels like</div>
+            <div class="detail-value">26°</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-title">Humidity</div>
+            <div class="detail-value">62%</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-title">Wind</div>
+            <div class="detail-value">14 km/h</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-title">UV Index</div>
+            <div class="detail-value">6 High</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-title">Visibility</div>
+            <div class="detail-value">10 km</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-title">Pressure</div>
+            <div class="detail-value">1012 hPa</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next 8 Hours Section -->
+      <section>
+        <h2>Next 8 hours</h2>
+        <div class="horizontal-scroll">
+          <div class="forecast-card">
+            <div class="time">Now</div>
+            <div class="icon">⛅</div>
+            <div class="temps">24°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">2 PM</div>
+            <div class="icon">☀️</div>
+            <div class="temps">26°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">3 PM</div>
+            <div class="icon">☀️</div>
+            <div class="temps">27°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">4 PM</div>
+            <div class="icon">🌤️</div>
+            <div class="temps">27°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">5 PM</div>
+            <div class="icon">⛅</div>
+            <div class="temps">26°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">6 PM</div>
+            <div class="icon">🌧️</div>
+            <div class="temps">24°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">7 PM</div>
+            <div class="icon">🌧️</div>
+            <div class="temps">23°</div>
+          </div>
+          <div class="forecast-card">
+            <div class="time">8 PM</div>
+            <div class="icon">☁️</div>
+            <div class="temps">21°</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- This Week Section -->
+      <section>
+        <h2>This week</h2>
+        <div class="horizontal-scroll">
+          <div class="forecast-card">
+            <div class="day">Mon</div>
+            <div class="icon">☀️</div>
+            <div class="temps">28°<span>19°</span></div>
+          </div>
+          <div class="forecast-card">
+            <div class="day">Tue</div>
+            <div class="icon">⛅</div>
+            <div class="temps">27°<span>18°</span></div>
+          </div>
+          <div class="forecast-card">
+            <div class="day">Wed</div>
+            <div class="icon">🌧️</div>
+            <div class="temps">23°<span>17°</span></div>
+          </div>
+          <div class="forecast-card">
+            <div class="day">Thu</div>
+            <div class="icon">⛈️</div>
+            <div class="temps">22°<span>16°</span></div>
+          </div>
+          <div class="forecast-card">
+            <div class="day">Fri</div>
+            <div class="icon">🌤️</div>
+            <div class="temps">26°<span>18°</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

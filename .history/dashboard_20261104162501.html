@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Header & Search -->
+      <header class="dashboard-header">
+        <div>
+          <h1>Weather Dashboard</h1>
+          <p class="subtitle">Sample data for design preview</p>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search a city..." />
+          <button>Search</button>
+        </div>
+      </header>
+
+      <!-- Main Content Grid -->
+      <main class="dashboard-grid">
+        <!-- Right Now -->
+        <section class="card current-weather">
+          <h2>Right now</h2>
+          <div class="weather-main">
+            <div>
+              <span class="temp">24°</span>
+              <p class="condition">Partly cloudy</p>
+              <p class="high-low">H: 28° &nbsp; L: 19°</p>
+            </div>
+            <div class="weather-icon">⛅</div>
+          </div>
+        </section>
+
+        <!-- Today's Details -->
+        <section class="card today-details">
+          <h2>Today's details</h2>
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="label">Feels like</span>
+              <span class="value">26°</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Humidity</span>
+              <span class="value">62%</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Wind</span>
+              <span class="value">14 km/h</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">UV Index</span>
+              <span class="value">6 High</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Visibility</span>
+              <span class="value">10 km</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Pressure</span>
+              <span class="value">1012 hPa</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Next 8 Hours -->
+        <section class="card hourly-forecast">
+          <h2>Next 8 hours</h2>
+          <div class="hourly-scroll">
+            <div class="hour-card">
+              <span class="time">Now</span><span class="icon">⛅</span
+              ><span class="temp">24°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">2 PM</span><span class="icon">☀️</span
+              ><span class="temp">26°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">3 PM</span><span class="icon">☀️</span
+              ><span class="temp">27°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">4 PM</span><span class="icon">🌤️</span
+              ><span class="temp">27°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">5 PM</span><span class="icon">⛅</span
+              ><span class="temp">26°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">6 PM</span><span class="icon">🌧️</span
+              ><span class="temp">24°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">7 PM</span><span class="icon">🌧️</span
+              ><span class="temp">23°</span>
+            </div>
+            <div class="hour-card">
+              <span class="time">8 PM</span><span class="icon">☁️</span
+              ><span class="temp">21°</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- This Week -->
+        <section class="card weekly-forecast">
+          <h2>This week</h2>
+          <div class="weekly-list">
+            <div class="day-row">
+              <span>Mon</span> <span>☀️</span>
+              <span class="temps">28° / 19°</span>
+            </div>
+            <div class="day-row">
+              <span>Tue</span> <span>⛅</span>
+              <span class="temps">27° / 18°</span>
+            </div>
+            <div class="day-row">
+              <span>Wed</span> <span>🌧️</span>
+              <span class="temps">23° / 17°</span>
+            </div>
+            <div class="day-row">
+              <span>Thu</span> <span>⛈️</span>
+              <span class="temps">22° / 16°</span>
+            </div>
+            <div class="day-row">
+              <span>Fri</span> <span>🌤️</span>
+              <span class="temps">26° / 18°</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
